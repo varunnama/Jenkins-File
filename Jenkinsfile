@@ -11,5 +11,20 @@ pipeline {
                }
             }
         }
+        stage('Approval') {
+            steps {
+               script {
+                echo "Approval Done"
+               }
+            }
+        }
+
+        stage('Deployment') {
+            steps {
+               script {
+                properties([parameters([choice(choices: ['UAT','Stage'], description: 'Select Correct UCD environment', name: 'Environment1')])])
+               }
+            }
+        }
     }
 }
