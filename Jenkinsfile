@@ -1,12 +1,12 @@
-//@library('pipeline-library')
+@library('pipeline-library')
 
 pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                properties([parameters(choiceparameter.getBuildProperties())])
             }
         }
     }
