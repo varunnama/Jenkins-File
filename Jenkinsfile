@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+               script {
                 properties([parameters(choiceparameter.getBuildProperties())])
+               }
             }
         }
     }
