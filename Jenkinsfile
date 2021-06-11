@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                script {
-                input message:'Select environment for build', ok: 'Env!', parameters: [choice(name:'Environment', choices: ['Build Only','Dev','Test'], description: 'Select Correct UCD environment')]
+                input message: 'Select Env for deploy', parameters: [choice(choices: ['UAT1', 'STAGE1'], description: 'Select correct env for deploy', name: 'Environment')]
                 }
             }
         }
