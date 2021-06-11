@@ -22,7 +22,8 @@ pipeline {
         stage('Deployment') {
             steps {
                script {
-                properties([parameters([choice(choices: ['UAT','Stage'], description: 'Select Correct UCD environment', name: 'Environment1')])])
+                input message:'Select UCD environment for deployment', parameters: [ 
+                properties([parameters([choice(choices: ['UAT','Stage'], description: 'Select Correct UCD environment', name: 'Environment1')])])]
                }
             }
         }
