@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                script {
-                input message:'Select environment for build', parameters: {choice(name:'Environment', choices: ['Build Only','Dev','Test'], description: 'Select Correct UCD environment')}
+                input message:'Select environment for build', ok: 'Env!', parameters: [choice(name:'Environment', choices: ['Build Only','Dev','Test'], description: 'Select Correct UCD environment')]
                 //properties([parameters([choice(choices: ['Build Only','Dev','Test'], description: 'Select Correct UCD environment', name: 'Environment')])])]
                }
             }
