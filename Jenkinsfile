@@ -1,7 +1,7 @@
 @library('pipeline-library')
 
 pipeline {
-    agent any
+    agent an
 
     stages {
         stage('Hello') {
