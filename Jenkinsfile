@@ -1,4 +1,4 @@
-@library('pipeline-library')
+//@library('pipeline-library')
 
 pipeline {
     agent any
@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                script {
-                properties([parameters(choiceparameter.getBuildProperties())])
+                properties([parameters[choice(choices:['Build Only','Dev','Test'], description: 'Select Correct UCD environment', name: 'Environment')]])
                }
             }
         }
