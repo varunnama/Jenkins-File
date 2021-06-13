@@ -8,7 +8,7 @@ pipeline {
        stage('Arifact upload to Nexus') {
             steps {
                script {
-                choiceparameter.getBuildProperties()
+                def fun_return = choiceparameter.getBuildProperties()
                 echo "Nexus upload is completed"
                 }
             }
