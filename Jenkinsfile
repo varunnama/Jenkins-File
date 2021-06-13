@@ -15,8 +15,8 @@ pipeline {
         stage('Deployment') {
             steps {
                script {
-                input message: 'Select Env for deploy', parameters: [choice(choices: ['UAT', 'STAGE'], description: 'Select correct env for deploy', name: 'Environment')]
-                echo "Selected Deployment Environment: ${params.Environment}"
+                def input_msg = input message: 'Select Env for deploy', parameters: [choice(choices: ['UAT', 'STAGE'], description: 'Select correct env for deploy', name: 'Environment')]
+                echo "Selected Deployment Environment: $input_msg"
                 }
             }
         }
