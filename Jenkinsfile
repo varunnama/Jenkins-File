@@ -4,10 +4,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+       stage('Arifact upload to Nexus') {
             steps {
                script {
-                input message: 'Select Env for deploy', parameters: [choice(choices: ['UAT1', 'STAGE1'], description: 'Select correct env for deploy', name: 'Environment')]
+                echo "Nexus upload is completed"
+                }
+            }
+        }
+        stage('Deployment') {
+            steps {
+               script {
+                input message: 'Select Env for deploy', parameters: [choice(choices: ['UAT', 'STAGE'], description: 'Select correct env for deploy', name: 'Environment')]
                 }
             }
         }
