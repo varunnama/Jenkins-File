@@ -1,4 +1,4 @@
-@library('pipeline-library')
+@library("pipeline-library")
 
 pipeline {
     agent any
@@ -9,7 +9,7 @@ pipeline {
             steps {
                script {
                 def fun_return = choiceparameter.getBuildProperties()
-                echo "Nexus upload is completed"
+                echo "Parameter: ${fun_return}"
                 }
             }
         }
