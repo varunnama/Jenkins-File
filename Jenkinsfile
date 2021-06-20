@@ -1,5 +1,7 @@
 @Library('pipeline-library@master')
 
+def anything = 'nothing'
+
 pipeline {
     agent any
 
