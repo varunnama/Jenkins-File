@@ -10,9 +10,9 @@ pipeline {
        stage('Arifact upload to Nexus') {
             steps {
                script {
-               // def fun_return = choiceparameter.getBuildProperties()
-                //echo "Parameter: ${fun_return}"
-                choiceparameter.call('Varun Nama')
+                def fun_return = choiceparameter.getBuildProperties()
+                echo "Parameter: ${fun_return}"
+              //  choiceparameter.call('Varun Nama')
                 }
             }
         }
