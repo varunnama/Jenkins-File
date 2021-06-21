@@ -1,6 +1,7 @@
 @Library('pipeline-library')
 
 def anything = 'nothing'
+def deploy_env= params.Environment
 
 pipeline {
     agent any
@@ -10,9 +11,9 @@ pipeline {
        stage('Build') {
             steps {
                script {
-                def sel_val = properties([parameters(choiceparameter.getBuildProperties())])
+                properties([parameters(choiceparameter.getBuildProperties())])
                
-                echo "Selected Environment: ${sel_val}"
+                echo "Selected Environment: ${deploy_env}"
              
                 }
             }
