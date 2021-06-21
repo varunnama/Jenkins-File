@@ -7,13 +7,13 @@ pipeline {
 
     stages {
 
-       stage('Arifact upload to Nexus') {
+       stage('Build') {
             steps {
                script {
-                properties([parameters(choiceparameter.getBuildProperties())])
-               // def fun_return = choiceparameter.getBuildProperties()
-                //echo "Parameter: ${fun_return}"
-              //  choiceparameter.call('Varun Nama')
+                def sel_val = properties([parameters(choiceparameter.getBuildProperties())])
+               
+                //echo "Selected Environment: ${sel_val}"
+             
                 }
             }
         }
