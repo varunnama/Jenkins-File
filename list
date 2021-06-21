@@ -1,0 +1,20 @@
+@Library('pipeline-library')
+
+def deploy_env= 'ABC'
+
+pipeline {
+    agent any
+
+    stages {
+
+       stage('List Values') {
+            steps {
+               script {
+                def list_val = lists.listvalue()
+                echo "Values: ${list_val}"
+                }
+            }
+        }
+      
+    }
+}
