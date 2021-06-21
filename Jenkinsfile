@@ -12,7 +12,7 @@ pipeline {
                script {
                 def sel_val = properties([parameters(choiceparameter.getBuildProperties())])
                
-                //echo "Selected Environment: ${sel_val}"
+                echo "Selected Environment: ${sel_val}"
              
                 }
             }
