@@ -10,7 +10,8 @@ pipeline {
        stage('List Values') {
             steps {
                script {
-                def list_val = lists.listvalue()
+                def App_Name = 'Varun'
+                def list_val = lists.listvalue(App_Name)
                 echo "Values: ${list_val}"
                 }
             }
