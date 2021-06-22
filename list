@@ -12,7 +12,11 @@ pipeline {
                script {
                 def App_Name = 'Varun'
                 def list_val = lists.listvalue(App_Name)
-                echo "Values: ${list_val}"
+                when{
+		expression {list_val != []}
+		echo "Values: ${list_val}"
+		    }
+                
                 }
             }
         }
