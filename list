@@ -9,7 +9,7 @@ pipeline {
 
        stage('List Values') {
            when{
-		expression {Names != []}
+		expression {Names.size() >= 1}
                }
             steps {
                script {
