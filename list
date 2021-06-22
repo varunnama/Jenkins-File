@@ -13,7 +13,7 @@ pipeline {
                 def App_Name = 'Varun'
                 def list_val = lists.listvalue(App_Name)
                 when{
-		expression {list_val != []}
+		expression {list_val.size() >= 1}
 		echo "Values: ${list_val}"
 		    }
                 
