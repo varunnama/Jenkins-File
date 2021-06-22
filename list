@@ -1,6 +1,6 @@
 @Library('pipeline-library')
 
-def deploy_env= 'ABC'
+def Names = ['A','B','C']
 
 pipeline {
     agent any
@@ -8,14 +8,15 @@ pipeline {
     stages {
 
        stage('List Values') {
+           when{
+		expression {Names.size() >= 1}
+               }
             steps {
                script {
                 def App_Name = 'Varun'
                 def list_val = lists.listvalue(App_Name)
-                when{
-		expression {list_val.size() >= 1}
-		echo "Values: ${list_val}"
-		    }
+                
+                echo "Values: ${list_val}"
                 
                 }
             }
