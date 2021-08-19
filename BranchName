@@ -22,7 +22,7 @@ pipeline {
                
            echo "Branch: ${branchname}"
 
-          if (branchname.startswith('develop/'))
+          if (branchname.startsWith('develop/'))
            {
              echo "Inside If Loop"
            }             
