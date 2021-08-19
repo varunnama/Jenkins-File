@@ -21,7 +21,11 @@ pipeline {
            def branchname = env.GIT_Branch
                
            echo "Branch: ${branchname}"
-             
+
+          if (branchname.startswith('develop/'))
+           {
+             echo "Inside If Loop"
+           }             
          }
        }
      }
