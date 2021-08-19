@@ -1,0 +1,29 @@
+@Library('pipeline-library')
+
+def giturl
+
+
+pipeline {
+    agent any
+
+    stages {
+
+       stage('Branch Information') 
+       {
+        steps 
+        {
+         script 
+         {
+           giturl = "${GIT_URL}"
+
+           echo "GIT URL: ${giturl}"
+
+           def branchname = env.GIT_Branch
+               
+           echo "Branch: ${branchname}"
+             
+         }
+       }
+     }
+   }
+}
